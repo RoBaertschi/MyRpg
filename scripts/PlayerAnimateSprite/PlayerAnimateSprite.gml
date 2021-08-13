@@ -2,10 +2,9 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerAnimateSprite(){
 	//Update Sprite
-	var _cardinalDirection = round(direction/90);
 	var _totalFrames = sprite_get_number(sprite_index) / 4;
 	
-	image_index = localFrame + (_cardinalDirection * _totalFrames);
+	image_index = localFrame + (CARDINAL_DIR * _totalFrames);
 	localFrame += sprite_get_speed(sprite_index) / FRAME_RATE;
 	
 	//If animation would loop on next game step
@@ -20,6 +19,7 @@ function PlayerAnimateSprite(){
 function MACROS(){
 	#macro FRAME_RATE 60
 	#macro TILE_SIZE 16
+	#macro CARDINAL_DIR round(direction/90)
 	
 }
 
